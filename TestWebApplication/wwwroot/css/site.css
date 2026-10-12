@@ -1,0 +1,370 @@
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+
+body {
+    background-color: #f5f7fb;
+    color: #25324b;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.app-navbar {
+    background-color: #192b49;
+    padding: 14px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-brand {
+    font-size: 1.2rem;
+}
+
+.app-navbar .nav-link {
+    color: #d5deeb;
+    font-size: 0.9rem;
+    margin-right: 8px;
+    transition: color 0.2s ease;
+}
+
+    .app-navbar .nav-link:hover {
+        color: #ffffff;
+    }
+
+
+.app-content {
+    flex: 1;
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+
+.card {
+    border: 1px solid #e8edf4;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+
+.table {
+    vertical-align: middle;
+}
+
+    .table thead {
+        background-color: #eef2f8;
+    }
+
+
+.btn {
+    border-radius: 7px;
+    font-weight: 500;
+}
+
+
+.form-control,
+.form-select {
+    border-radius: 7px;
+}
+
+
+.app-footer {
+    padding: 18px 0;
+    border-top: 1px solid #e5e9f0;
+    color: #7b8798;
+    background-color: #ffffff;
+    font-size: 0.85rem;
+}
+
+/*Dashboard*/
+
+.dashboard-page h2 {
+    color: #25324b;
+}
+
+/* Statistics Cards */
+
+.dashboard-card {
+    border: 1px solid #e8edf4;
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+    .dashboard-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+    }
+
+    .dashboard-card .card-body {
+        padding: 22px;
+    }
+
+.stat-title {
+    color: #718096;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 15px;
+    margin-bottom: 0;
+    color: #25324b;
+}
+
+/* Icons */
+
+.stat-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+
+.icon-blue {
+    background-color: #e8f0ff;
+    color: #3563c9;
+}
+
+.icon-green {
+    background-color: #e5f7ee;
+    color: #259b63;
+}
+
+.icon-purple {
+    background-color: #f0eaff;
+    color: #7952b3;
+}
+
+.icon-red {
+    background-color: #fdeaea;
+    color: #d9534f;
+}
+
+/* Transactions Table */
+
+.dashboard-table-card {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+    .dashboard-table-card .table th {
+        color: #718096;
+        font-size: 0.85rem;
+        font-weight: 600;
+        padding: 15px;
+        border-bottom: 1px solid #e8edf4;
+    }
+
+    .dashboard-table-card .table td {
+        padding: 15px;
+        border-bottom: 1px solid #f0f2f6;
+    }
+
+    .dashboard-table-card .badge {
+        font-size: 0.8rem;
+        padding: 7px 12px;
+        border-radius: 6px;
+    }
+
+/* Items Page*/
+
+.items-page h2 {
+    color: #25324b;
+}
+
+/* Search Card */
+
+.items-page .form-label {
+    color: #475569;
+    font-size: 0.9rem;
+}
+
+/* Items Table */
+
+.items-table-card {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+    .items-table-card .table th {
+        color: #718096;
+        font-size: 0.85rem;
+        font-weight: 600;
+        padding: 15px;
+        border-bottom: 1px solid #e8edf4;
+        white-space: nowrap;
+    }
+
+    .items-table-card .table td {
+        padding: 15px;
+        border-bottom: 1px solid #f0f2f6;
+    }
+
+/* Item Image */
+
+.item-image {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #e8edf4;
+}
+
+/* Stock Status */
+
+.items-table-card .badge {
+    font-size: 0.8rem;
+    padding: 7px 12px;
+    border-radius: 6px;
+}
+
+/* Action Buttons */
+
+.items-table-card .btn-sm {
+    padding: 6px 10px;
+}
+
+/* Categories Page */
+
+.categories-page h2 {
+    color: #25324b;
+}
+
+.categories-table-card {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+    .categories-table-card .table th {
+        color: #718096;
+        font-size: 0.85rem;
+        font-weight: 600;
+        padding: 15px;
+        border-bottom: 1px solid #e8edf4;
+    }
+
+    .categories-table-card .table td {
+        padding: 15px;
+        border-bottom: 1px solid #f0f2f6;
+    }
+
+    .categories-table-card .btn-sm {
+        padding: 6px 10px;
+    }
+
+/*Stock Transactions Page*/
+
+.transactions-page h2 {
+    color: #25324b;
+}
+
+.transactions-table-card {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+    .transactions-table-card .table th {
+        color: #718096;
+        font-size: 0.85rem;
+        font-weight: 600;
+        padding: 15px;
+        border-bottom: 1px solid #e8edf4;
+    }
+
+    .transactions-table-card .table td {
+        padding: 15px;
+        border-bottom: 1px solid #f0f2f6;
+    }
+
+    .transactions-table-card .badge {
+        font-size: 0.8rem;
+        padding: 7px 12px;
+        border-radius: 6px;
+    }
+
+/* Employees Page */
+
+.employees-page h2 {
+    color: #25324b;
+}
+
+.employees-table-card {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+    .employees-table-card .table th {
+        color: #718096;
+        font-size: 0.85rem;
+        font-weight: 600;
+        padding: 15px;
+        border-bottom: 1px solid #e8edf4;
+        white-space: nowrap;
+    }
+
+    .employees-table-card .table td {
+        padding: 15px;
+        border-bottom: 1px solid #f0f2f6;
+    }
+
+    .employees-table-card .btn-sm {
+        padding: 6px 10px;
+    }
+
+
+.form-page h2 {
+    color: #25324b;
+}
+
+.form-card {
+    max-width: 900px;
+    border-radius: 12px;
+    border: 1px solid #e8edf4;
+}
+
+    .form-card .form-label {
+        color: #475569;
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+
+    .form-card .form-control,
+    .form-card .form-select {
+        padding: 10px 12px;
+        border: 1px solid #dce3ed;
+        border-radius: 7px;
+    }
+
+        .form-card .form-control:focus,
+        .form-card .form-select:focus {
+            border-color: #8aa4d6;
+            box-shadow: 0 0 0 0.2rem rgba(53, 99, 201, 0.1);
+        }
+
+    .form-card .btn {
+        padding-top: 9px;
+        padding-bottom: 9px;
+    }
+
+.image-preview {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #e8edf4;
+    margin-top: 10px;
+}

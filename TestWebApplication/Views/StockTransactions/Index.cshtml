@@ -1,0 +1,123 @@
+﻿@model IEnumerable<StockTransaction>
+
+@{
+    ViewData["Title"] = "Stock Transactions";
+}
+
+<div class="transactions-page">
+
+    <partial name="_Notifications" />
+
+    <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
+
+        <div>
+            <h2 class="fw-bold mb-1">Stock Transactions</h2>
+            <p class="text-muted mb-0">
+                Track inventory stock movements
+            </p>
+        </div>
+
+        <a asp-area=""
+           asp-controller="StockTransactions"
+           asp-action="New"
+           class="btn btn-primary">
+
+            <i class="bi bi-plus-lg me-1"></i>
+            New Transaction
+        </a>
+
+    </div>
+
+    <div class="card transactions-table-card">
+
+        <div class="card-header bg-white border-0 px-4 pt-4 pb-3">
+
+            <h5 class="fw-bold mb-1">
+                <i class="bi bi-arrow-left-right me-2"></i>
+                Transaction History
+            </h5>
+
+            <p class="text-muted small mb-0">
+                View all incoming and outgoing stock transactions
+            </p>
+
+        </div>
+
+        <div class="card-body px-4 pb-4 pt-0">
+
+            <div class="table-responsive">
+
+                <table class="table table-hover align-middle mb-0">
+
+                    <thead>
+                        <tr>
+                            <th>Item Name</th>
+                            <th>Transaction Type</th>
+                            <th>Quantity</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        @if (Model.Any())
+                        {
+                            foreach (var transaction in Model)
+                            {
+                                <tr>
+                                    <td class="fw-semibold">
+                                        @transaction.Item?.Name
+                                    </td>
+
+                                    <td>
+                                        @if (transaction.Type == "IN")
+                                        {
+                                            <span class="badge bg-success-subtle text-success">
+                                                <i class="bi bi-arrow-down-circle me-1"></i>
+                                                IN
+                                            </span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-danger-subtle text-danger">
+                                                <i class="bi bi-arrow-up-circle me-1"></i>
+                                                OUT
+                                            </span>
+                                        }
+                                    </td>
+
+                                    <td>
+                                        @transaction.Quantity
+                                    </td>
+
+                                    <td class="text-muted">
+                                        @transaction.CreatedDate.ToString("yyyy-MM-dd")
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="4"
+                                    class="text-center text-muted py-5">
+
+                                    <i class="bi bi-inbox fs-2 d-block mb-2"></i>
+
+                                    No transactions available.
+
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

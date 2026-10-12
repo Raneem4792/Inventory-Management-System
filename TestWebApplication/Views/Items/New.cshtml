@@ -1,0 +1,139 @@
+﻿@model Item
+
+@{
+    ViewData["Title"] = "Add New Item";
+}
+
+<div class="form-page">
+
+    <div class="mb-4">
+        <h2 class="fw-bold mb-1">Add New Item</h2>
+        <p class="text-muted mb-0">
+            Enter the details to add a new inventory item
+        </p>
+    </div>
+
+    <div class="card form-card">
+
+        <div class="card-body p-4">
+
+            <form method="post" enctype="multipart/form-data">
+
+                <div asp-validation-summary="ModelOnly"
+                     class="text-danger mb-3"></div>
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+                        <label asp-for="Name" class="form-label fw-medium">
+                            Item Name
+                        </label>
+
+                        <input asp-for="Name"
+                               class="form-control"
+                               placeholder="Enter item name" />
+
+                        <span asp-validation-for="Name"
+                              class="text-danger small"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="Price" class="form-label fw-medium">
+                            Price
+                        </label>
+
+                        <input asp-for="Price"
+                               class="form-control"
+                               placeholder="Enter item price" />
+
+                        <span asp-validation-for="Price"
+                              class="text-danger small"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="CategoryId" class="form-label fw-medium">
+                            Category
+                        </label>
+
+                        <select asp-for="CategoryId"
+                                asp-items="ViewBag.CategoryList"
+                                class="form-select">
+                        </select>
+
+                        <span asp-validation-for="CategoryId"
+                              class="text-danger small"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="clientFile" class="form-label fw-medium">
+                            Item Image
+                        </label>
+
+                        <input asp-for="clientFile"
+                               type="file"
+                               accept="image/*"
+                               class="form-control"
+                               onchange="loadFile(event)" />
+
+                        <span asp-validation-for="clientFile"
+                              class="text-danger small"></span>
+                    </div>
+
+                    <div class="col-12">
+                        <img id="myImg"
+                             class="image-preview"
+                             alt="Image preview"
+                             style="display:none;" />
+                    </div>
+
+                </div>
+
+                <div class="d-flex gap-2 mt-4">
+
+                    <button type="submit" class="btn btn-primary px-4">
+                        <i class="bi bi-check-lg me-1"></i>
+                        Save Item
+                    </button>
+
+                    <a asp-area=""
+                       asp-controller="Items"
+                       asp-action="Index"
+                       class="btn btn-outline-secondary px-4">
+
+                        Cancel
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        function loadFile(event) {
+            const file = event.target.files[0];
+            const image = document.getElementById('myImg');
+            if (!file) {
+                image.style.display = 'none';
+                image.removeAttribute('src');
+                return;
+            }
+
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                image.src = e.target.result;
+                image.style.display = 'block';
+            };
+
+            reader.readAsDataURL(file);
+        }
+    </script>
+}
