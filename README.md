@@ -55,19 +55,19 @@ The system helps manage inventory items, categories, employees, and stock transa
 ## Screenshots
 
 ### Dashboard
-![Dashboard](Screenshots/dashboard.png)
+![Dashboard](TestWebApplication/Screenshots/dashboard.png)
 
 ### Items
-![Items](Screenshots/items.png)
+![Items](TestWebApplication/Screenshots/items.png)
 
 ### Categories
-![Categories](Screenshots/categories.png)
+![Categories](TestWebApplication/Screenshots/categories.png)
 
 ### Stock Transactions
-![Stock Transactions](Screenshots/transactions.png)
+![Stock Transactions](TestWebApplication/Screenshots/transactions.png)
 
 ### Employees
-![Employees](Screenshots/employees.png)
+![Employees](TestWebApplication/Screenshots/employees.png)
 
 ## Project Purpose
 
